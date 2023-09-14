@@ -8,6 +8,7 @@ const userRoutes=require('./Routes/userRoutes')
 const connection=require("./config/dbMongoose")
 const express = require("express");
 const ActivityRoutes = require('./Routes/ActivityRoutes');
+const saveRoutes = require('./Routes/SaveRoutes');
 const app = express();
 
 app.use(cors())
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/api',recipeRoutes)
 app.use('/user',userRoutes)
 app.use('/api',ActivityRoutes)
+app.use('/api',saveRoutes)
 
 app.listen(3001, async () => {
     try {
